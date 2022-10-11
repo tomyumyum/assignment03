@@ -9,6 +9,9 @@
  * **********************************************
  */
 
+//import java.lang.*;
+//import java.util.*;
+
 package assignment03PartC;
 
 public class BlurbGenerator {
@@ -17,6 +20,7 @@ public class BlurbGenerator {
      * Instantiates a random number generator needed for blurb creation.
      */
     public BlurbGenerator() {
+        generator = new Random();
     }
 
     /**
@@ -24,6 +28,7 @@ public class BlurbGenerator {
      * one or more Whatzits.
      */
     public String makeBlurb() {
+        return makeWhoozit() + makeMultiWhatzits();
     }
 
     /**
@@ -31,18 +36,32 @@ public class BlurbGenerator {
      * zero or more 'y's.
      */
     private String makeWhoozit() {
+        return "X" + makeYString();
     }
 
     /**
      * Recursively generates a string of zero or more 'y's.
      */
     private String makeYString() {
+        int random = generator.nextInt(5);
+        if (random == 0) {
+            return "";
+        }
+        else {
+            return "y" + makeYString();
+        }
     }
 
     /**
      * Recursively generates a string of one or more Whatzits.
      */
     private String makeMultiWhatzits() {
+        int random = generator.nextInt(5);
+        if (random == 0) {
+            return "";
+        }
+        else
+        return makeMultiWhatzits() + makeMultiWhatzits();
     }
 
     /**
@@ -50,5 +69,14 @@ public class BlurbGenerator {
      * or a 'd', followed by a Whoozit.
      */
     private String makeWhatzit() {
+        int random = generator.nextInt(2);
+        String blurb = "q";
+        if (random == 0){
+            blurb += "z";
+        }
+        else {
+            blurb += "d";
+        }
+        return blurb + makeWhoozit();
     }
 }
