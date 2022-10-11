@@ -20,8 +20,35 @@ import java.util.Scanner;
 //
 public class PalindromeChecker {
 
+    private static Object String;
+
     private static boolean isPalindrome(String string) {
+        String = string.toLowerCase();
+        String emptyString = "";
+        OurStack<Character> theStack = new OurStack<Character>();
+        
+        for (int i= 0; i < string.length(); i++) {
+            if (!isPunctuation(string.charAt(i))) {
+                emptyString = emptyString + string.charAt(i);
+                theStack.push(string.charAt(i));
+            }
+
+        }
+        String palindromeString = "";
+        while(!theStack.isEmpty()){
+            palindromeString = palindromeString + theStack.pop();
+        }
+        if (emptyString.equals(palindromeString)){
+            return true;
+        } else {
+            return false;
+        }
+
     } 
+
+    public static boolean isPunctuation(char Character){
+        return !Character.isDigit(character) && !Character.isLetter(character);
+    }
 
     //
     // - Do not change the "main" method.

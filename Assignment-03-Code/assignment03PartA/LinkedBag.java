@@ -28,7 +28,7 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
         return true;
     }
 
-
+//New things added to the code
 
     @Override
     public int getCurrentSize() {
@@ -64,6 +64,7 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
             index++;
             currentNode = currentNode.next;
         }
+        return result;
     }
 
 
