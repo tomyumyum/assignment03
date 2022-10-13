@@ -27,7 +27,7 @@ public class PalindromeChecker {
         String emptyString = "";
         OurStack<Character> theStack = new OurStack<Character>();
         
-        for (int i= 0; i < string.length(); i++) {
+        for (int i = 0; i < string.length(); i++) {
             if (!isPunctuation(string.charAt(i))) {
                 emptyString = emptyString + string.charAt(i);
                 theStack.push(string.charAt(i));
@@ -45,8 +45,7 @@ public class PalindromeChecker {
         }
 
     } 
-
-    public static boolean isPunctuation(char Character){
+    public static boolean isPunctuation (char character) {
         return !Character.isDigit(character) && !Character.isLetter(character);
     }
 

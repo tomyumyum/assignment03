@@ -5,7 +5,7 @@
  * File Name: BlurbGenerator.java
  * Author: Java Foundation
  * Author: Duc Ta
- * Author: <First Name> <Last Name>
+ * Author: Tuong Nguyen
  * **********************************************
  */
 
@@ -15,12 +15,13 @@
 package assignment03PartC;
 
 public class BlurbGenerator {
+    private final Random generator;
 
     /**
      * Instantiates a random number generator needed for blurb creation.
      */
     public BlurbGenerator() {
-        generator = new Random();
+        generator= new Random();
     }
 
     /**
